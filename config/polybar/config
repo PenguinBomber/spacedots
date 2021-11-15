@@ -1,0 +1,108 @@
+;; Base Config
+;; Bryce Schuman
+
+[color]
+
+bar = #333
+bg-dark = #333
+bg = #d09867
+bg-light = #D8AA82 
+
+[bar/base]
+border-bottom-size = 0
+
+line-size = 3
+width = 100%
+height = 30
+
+bottom=false
+
+background = ${color.bar}
+
+font-0 = "Literation Mono Nerd Font:pixelsize=10;2"
+
+[bar/main]
+inherit = bar/base
+
+modules-left = date alsa workspaces
+
+radius = 0
+
+[module/date]
+type = internal/date
+interval = 1.0
+
+time = %I:%M %p
+
+format = <label>
+format-background = ${color.bg-dark}
+format-padding = 1
+format-offset = -3
+label = %time%
+format-underline = #fff
+
+[module/alsa]
+type = internal/alsa
+format-volume = <label-volume>
+format-muted = <label-muted>
+
+format-volume-background = ${color.bg-dark}
+format-muted-background = ${color.bg-dark}
+
+label-volume = 墳 %percentage%%
+label-muted = 婢 Muted
+
+label-volume-padding = 1
+label-muted-padding = 1
+
+format-volume-underline = #00f
+format-muted-underline = #f00
+
+[module/battery]
+type = internal/battery
+
+format-charging = <label-charging>
+
+full-at = 100
+battery = BAT1
+adapter = ADP1
+poll-interval = 1
+
+label-full =  100%
+label-charging =  %percentage%%
+label-discharging =  %percentage%%
+
+label-full-padding = 1
+label-charging-padding = 1
+label-discharging-padding = 1
+
+format-charging-background = ${color.bg}
+format-discharging-background = ${color.bg}
+
+[module/workspaces]
+type = internal/xworkspaces
+
+format = <label-state>
+format-padding = 0
+
+label-active-background = ${color.bg-light}
+label-empty-background  = ${color.bg-dark}
+label-occupied-background = ${color.bg-dark}
+
+label-active-padding = 1
+label-empty-padding = 1
+label-occupied-padding = 1
+
+label-active-padding-left = 0.5
+label-empty-padding-left = 0.5
+label-occupied-padding-left = 0.5
+
+label-active-underline = ${color.bg-light}
+label-empty-underline = ${color.bg-light}
+label-occupied-underline = ${color.bg-light}
+
+
+[settings]
+pseudo-transparency = false
+override-redirect = true
+wm-restack = bspwm

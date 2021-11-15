@@ -1,0 +1,36 @@
+* {
+	background-color: rgba ( 0, 0, 0, 0%);
+	text-color: rgba ( 255, 255, 255, 100%);
+	background      : rgba(66, 52, 50, 80%);
+	background-light: #d8aa82;
+	background-dark : #121220;
+}
+window {
+	location: northwest;
+	anchor: northwest;
+	x-offset: 10px;
+	y-offset: 40px;
+	width: 15%;
+	background-color: @background;
+	padding: 0;
+	border-radius: 5;
+}
+mainbox {
+	/*children: [ listview,message,inputbar ];*/
+}
+element {
+	padding: 0.3em 0 0 0.3em ;
+}
+element.selected {
+	background-color: @background-light;
+}
+inputbar {
+	background-color: @background-dark;
+	padding: 0.3em 0 0 0.3em;
+	children: [ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+textbox-prompt-colon {
+	expand: false;
+	str: ":";
+	margin: 0px;
+}
