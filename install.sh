@@ -1,9 +1,14 @@
 #!/bin/bash
+
+#BS Dots Installer v1
+#Bryce Schuman
+#Nov 2021
+
 help () {
-	echo "KittyDot Installer Usage: ./install.sh <operation> (option)"
+	echo "SpaceDot Installer Usage: ./install.sh <operation> (option)"
 	echo ""
 	echo "Operations"
-	echo " install : Installs the KittyDot config"
+	echo " install : Installs the SpaceDot config"
 	echo " backup  : Copys the current configs to (Config File).backup for safe keeping"
 	echo " restore : Restores the config files named (Config File).backup that the installer backed up"
 	EXIT=1
